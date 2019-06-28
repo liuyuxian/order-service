@@ -34,6 +34,7 @@ public class OrderWriteService {
         orderRepository.save(order);
 
         //TODO: send out order created event
+        eventStreams.outputOrder().send(MessageBuilder.withPayload(OrderEvent.createdEvent(order)).build());
 
         return order;
     }

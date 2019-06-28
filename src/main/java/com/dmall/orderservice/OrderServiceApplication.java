@@ -11,6 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @EnableFeignClients
 //TODO: enable stream binding
+@EnableBinding(EventStreams.class)
 public class OrderServiceApplication {
 
     public static void main(String[] args) {
